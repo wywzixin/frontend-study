@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title Page</title>
+    <script src="https://unpkg.com/dayjs"></script>
+</head>
+
+<body>
+    <script>
+        //Moment.js 是一个大而全的 JS 时间库，很大地方便了我们处理日期和时间。
+        //但是 Moment.js太重了(200k+ with locals)，可能一般项目也只使用到了她几个常用的API。虽然社区也有几个轻量的时间库，要想迁移过去又会增加新的学习和迁移成本
+        //day.js 虽然仅有 2kb 大小，但是功能一点都没有阉割。包含了时间处理的全部常用方法
+        //npm install dayjs --save
+
+        //import dayjs from 'dayjs'
+        // var dayjs = require('dayjs');
+        // dayjs().format()
+
+        //import 'dayjs/locale/es
+
+        //dayjs.locale('es') // use Spanish locale globally
+
+        //dayjs('2018-05-05').locale('zh-cn').format() // use Chinese Simplified locale in a specific instance
+
+
+        let time = dayjs().startOf('month').add(1, 'day').set('year', 2019).format('YYYY-MM-DD HH:mm:ss');
+        console.log(time) //2019-12-02 00:00:00
+        console.log(dayjs().format()) //dayjs.html:18 2019-12-25T10:13:55+08:00
+            // now()方法返回自1970年1月1日00:00:00 UTC以来的毫秒数
+            //返回自1970/01/01以来的毫秒数
+        console.log(Date.now()) //1577240129114
+        console.log(dayjs()) //当前时间
+        console.log(dayjs(Date.now() - 24 * 60 * 60 * 1000)) // 昨天)
+        console.log(dayjs().format('YYYY年MM月DD日 HH:mm:ss')) // 22019年12月25日 10:23:53
+        console.log(dayjs().add(7, 'days')) //之后的第七天
+        console.log(dayjs().startOf('months')) //
+    </script>
+</body>
+
+</html>

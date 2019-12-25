@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title Page</title>
+</head>
+
+<body>
+    <script>
+        // GMT： 格林威治标准时间，指位于伦敦郊区的皇家格林威治天文台的标准时间，因为本初子午线被定义在通过那里的经线。
+        // UTC： 协调世界时，以原子时秒长为基础，在时刻上接近于格林威治标准时间的一种时间计量系统。
+        // 由于地球的自转有些不规则，并且正在缓慢减速，格林威治时间不再作为标准时间使用，而使用协调世界时UTC。
+        // 为了方便，在不需要精确到秒的情况下，通常将GMT和UTC视为等同。
+
+        console.log(new Date()) //Wed Dec 25 2019 10:05:46 GMT+0800 (中国标准时间)  没有参数： 返回的Date对象表示实例化时刻的日期和时间
+        console.log(Date.now()) //1577240129114  时间戳： 是指格林威治时间1970年01月01日00时00分00秒至指定时间的总秒数
+        console.log(new Date().getTime()) //1577241358886
+
+        //  "2019-07-23" （仅日期表单）
+        // "2019-07-23T12:00:00" （日期时间表单）
+        // "2019-07-23T12:00:00.000+08:00"（具有毫秒和时区的日期时间表单）
+        // "2019-01-01T00:00:00.000Z"（指定UTC时区，Z是协调世界时0时区的标志
+
+        // year： 表示年份的整数值
+        // monthIndex： 表示月份的整数值，从0（1月）到11（12月）
+        // day： 表示一个月中第几天的整数值
+        // hours： 表示一天中的小时数的整数值
+        // minutes： 表示分钟部分的整数值
+        // seconds： 表示秒部分的整数值
+        // milliseconds： 表示毫秒部分的整数值
+        let date = new Date()
+        let now = new Date()
+        console.log(date.getDate()) //25  几号
+        console.log(date.getDay()) //3 星期几
+        console.log(date.getHours()) //10
+        console.log(date.getMinutes()) //41
+        console.log(date.getMonth()) //11  0为1月， 11为12月
+        console.log(date.getFullYear()) //2019
+        console.log(now.setMinutes(0))
+        console.log(now.setSeconds(0)) //设置 Date 对象中的秒钟 (0 ~ 59)。
+        console.log(now.setHours(0)) //设置 Date 对象中的小时 (0 ~ 23)。
+    </script>
+</body>
+
+</html>

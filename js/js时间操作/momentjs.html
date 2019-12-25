@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
+</head>
+
+<body>
+    <script>
+        //JavaScript 日期处理类库
+        // npm install moment --save   # npm
+        // 日期格式化
+        let time = moment().format('MMMM Do YYYY, h:mm:ss a') //December 25th 2019, 10:00:01 am
+        console.log(time)
+        console.log(moment().format('dddd')) //Wednesday
+        console.log(moment().format()) //2019-12-25T10:04:17+08:00
+        console.log(moment('20111031', 'YYYYMMDD').fromNow()) //8 years ago
+        console.log(moment().startOf('day').fromNow()) //10 hours ago
+        console.log(new Date()) //Wed Dec 25 2019 10:05:46 GMT+0800 (中国标准时间)
+    </script>
+</body>
+
+</html>
