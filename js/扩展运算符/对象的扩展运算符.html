@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title Page</title>
+
+    </head>
+    <body>
+        <h1 class="text-center">Hello World</h1>
+        <script >
+          //对象中的扩展运算符(...)用于取出参数对象中的所有可遍历属性，拷贝到当前对象之中
+          //扩展运算符(...)用于取出参数对象中的所有可遍历属性，拷贝到当前对象之中
+          let person = {
+              name:'wangyawei',
+              age:25
+          }
+          
+          let po = {...person}
+          console.log(po)  //{name: "wangyawei",age: 25}
+          // 等价于
+
+          //let baz = Object.assign({},person)
+         // Object.assign方法用于对象的合并，将源对象（source）的所有可枚举属性，复制到目标对象（target)
+         //Object.assign方法的第一个参数是目标对象，后面的参数都是源对象
+         let ps = Object.assign({sex:'男'},person)  //{sex: "男", name: "wangyawei", age: 25}
+         console.log(ps)
+
+         //如果用户自定义的属性，放在扩展运算符后面，则扩展运算符内部的同名属性会被覆盖掉
+         //利用上述特性就可以很方便的修改对象的部分属性
+         //reducer中的state对象要求不能直接修改，可以通过扩展运算符把修改路径的对象都复制一遍，然后产生一个新的对象返回
+         let bar = {a: 1, b: 2};
+         let baz = {...bar, ...{a:2, b: 4}};  // {a: 2, b: 4}
+    </script>
+    </body>
+</html>

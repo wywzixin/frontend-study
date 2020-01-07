@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title Page</title>
+
+    </head>
+    <body>
+        <h1 class="text-center">Hello World</h1>
+        <script >
+         //可以将数组转换为参数序列
+        //  function add(x, y) {
+        //     return x + y;
+        //  }
+
+        //  const numbers = [4, 38];
+        //  add(...numbers) // 42
+
+        //可以复制数组 
+        const arr1 = [1, 2];
+        const arr2 = [...arr1];
+
+        //扩展运算符(...)用于取出参数对象中的所有可遍历属性，拷贝到当前对象之中
+        //这里参数对象是个数组，数组里面的所有对象都是基础数据类型，将所有基础数据类型重新拷贝到新的数组中
+        const [first, ...rest] = [1, 2, 3, 4, 5];
+        //first // 1
+        //rest  // [2, 3, 4, 5]
+
+        //如果将扩展运算符用于数组赋值，只能放在参数的最后一位，否则会报错
+        
+       </script>
+    </body>
+</html>
