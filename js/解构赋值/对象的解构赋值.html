@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title Page</title>
+
+    </head>
+    <body>
+        <h1 class="text-center">Hello World</h1>
+        <script >
+           //对象的解构赋值
+           let details = {
+               firstName: 'ww',
+               lastName: 'yawei',
+               age: 25
+           }
+
+           const {firstName,age} = details 
+           console.log(firstName)
+           console.log(age)
+           //这段代码中 details.firstName 的值被存储在变量 firstName 中，
+           //details.age 的值被存储在变量 age 中。 这是对象解构的最基本形式
+
+           //非同名变量赋值
+           //在这里，我们创建了两个局部变量：fullname , place，并将 fullname 映射到 name，place映射到 country
+           const person = {
+               name: 'wangyawei',
+               country: 'China'
+           }
+
+           const {name:fullName,country:place} = person 
+           console.log(fullName)
+           console.log(place)
+
+           //使用解构赋值表达式时，如果指定的局部变量名称在对象中不存在，那么这个局部变量会被赋值为 undefined
+           let {age} = person;
+           console.log(age); // undefined
+
+           //当指定的属性不存在时，可以定义一个默认值
+           let {age = 20,sexual:sex = 'male'} = person;
+           console.log(age); // 20
+           console.log(sex); // male
+
+        </script>
+    </body>
+</html>

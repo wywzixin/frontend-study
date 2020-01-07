@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title Page</title>
+
+    </head>
+    <body>
+        <h1 class="text-center">Hello World</h1>
+        <script >
+           //与对象解构的语法相比，数组解构就简单多了，它使用的是数组字面量，且解构操作全部在数组内完成
+
+           let list = [221,'Baker Street','London'];
+           let [houseNo,street] = list;
+
+           //在数组的解构中，也可以直接省略元素，只为需要的元素提供变量名
+           //city 前的逗号是前方元素的占位
+           let [houseNo,,city] = list;
+
+           //在数组的解构赋值表达式中也可以为数组的任意位置添加默认值，当指定位置的属性不存在或其值为 undefined 时使用默认值
+           let [houseNo,street,city = 'BJ'] = list;
+            console.log(houseNo,street);// 221 , Baker Street
+
+           //嵌套数组的解构赋值
+           //就像对象一样，也可以对嵌套数组进行解构操作，在原有的数组解构模式中插入另一个数组解构模式
+            let colors = ['red',['green','yellow'],'blue']
+            let [ firstColor , [ secondColor ] ] = colors;
+            console.log(firstColor,secondColor); // red , green
+
+            //扩展运算符
+            let colors = ['red','green','blue'];
+            let [firstColor,...otherColors] = colors;
+            console.log(firstColor);  // red
+            console.log(otherColors); // ['green','blue']
+
+            // 结合展开运算符
+            const [name4,...set] = namess;
+            console.log(name4)//Henry
+            console.log(set)//[ 'Bucky', 'Emily' ]
+            console.log(name,set)//henry [ 'Bucky', 'Emily' ]
+        </script>
+    </body>
+</html>

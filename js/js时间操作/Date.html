@@ -32,16 +32,17 @@
         // seconds： 表示秒部分的整数值
         // milliseconds： 表示毫秒部分的整数值
         let date = new Date()
-        let now = new Date()
+        let now = Date.now()
+        let date2 = new Date(now)
         console.log(date.getDate()) //25  几号
         console.log(date.getDay()) //3 星期几
         console.log(date.getHours()) //10
         console.log(date.getMinutes()) //41
         console.log(date.getMonth()) //11  0为1月， 11为12月
         console.log(date.getFullYear()) //2019
-        console.log(now.setMinutes(0))
-        console.log(now.setSeconds(0)) //设置 Date 对象中的秒钟 (0 ~ 59)。
-        console.log(now.setHours(0)) //设置 Date 对象中的小时 (0 ~ 23)。
+        console.log(date2.setMinutes(0))
+        console.log(date2.setSeconds(0)) //设置 Date 对象中的秒钟 (0 ~ 59)。  返回调整过的日期的毫秒表示
+        console.log(date2.setHours(0)) //设置 Date 对象中的小时 (0 ~ 23)。  返回调整过的日期的毫秒表示
     </script>
 </body>
 

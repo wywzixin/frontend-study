@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title Page</title>
+
+    </head>
+    <body>
+        <h1 class="text-center">Hello World</h1>
+        <script >
+          //可以混合使用对象解构和数组解构来构建更多复杂的表达式，如此一来可以从任何混杂着对象和数组的数据结构中提取你想要的信息
+          let node = {
+                name:'foo',
+                loc:{
+                    start:{
+                        line:1,
+                        column:1
+                    }
+                },
+                range:[0,3]
+            }
+            let {
+                loc:{start:{line}},
+                range:[startIndex]
+            } = node;
+            console.log(line);       // 1
+            console.log(startIndex); // 0
+    </script>
+    </body>
+</html>

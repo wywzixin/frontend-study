@@ -26,6 +26,7 @@
 
         //dayjs('2018-05-05').locale('zh-cn').format() // use Chinese Simplified locale in a specific instance
 
+        // 直接运行 dayjs()，得到包含当前时间和日期的 Dayjs 对象
 
         let time = dayjs().startOf('month').add(1, 'day').set('year', 2019).format('YYYY-MM-DD HH:mm:ss');
         console.log(time) //2019-12-02 00:00:00
@@ -38,6 +39,9 @@
         console.log(dayjs().format('YYYY年MM月DD日 HH:mm:ss')) // 22019年12月25日 10:23:53
         console.log(dayjs().add(7, 'days')) //之后的第七天
         console.log(dayjs().startOf('months')) //
+        // 返回 Unix 时间戳 (毫秒)   dayjs().valueOf()
+
+        console.log(dayjs('2019-12-26').valueOf())    //1577289600000
     </script>
 </body>
 
