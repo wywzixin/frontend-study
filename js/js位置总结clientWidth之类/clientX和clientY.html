@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* clientX和clientY，这对属性是当事件发生时，鼠标点击位置相对于浏览器（可视区）的坐标，
+        即浏览器左上角坐标的（0,0），该属性以浏览器左上角坐标为原点，计算鼠标点击位置距离其左上角的位置， */
+/* 
+        screenX和screenY是事件发生时鼠标相对于屏幕的坐标，以设备屏幕的左上角为原点，
+        事件发生时鼠标点击的地方即为该点的screenX和screenY值，如下所示： */
+    
+        /* offsetX和offsetY这一对属性是指当事件发生时，
+        鼠标点击位置相对于该事件源的位置，即点击该div，以该div左上角为原点来计算鼠标点击位置的坐标 */
+        
+        /* pageX和pageY 顾名思义，该属性是事件发生时鼠标点击位置相对于页面的位置，通常浏览器窗口没有出现滚动条时，该属性和event.clientX及event.clientY是等价的，
+        但是当浏览器出现滚动条的时候，pageX通常会大于clientX，因为页面还存在被卷起来的部分的宽度和高度 */
+
+       .one {
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 20px;
+            border: 1px solid #000000;
+            position: absolute;
+            top:20px;
+        }  
+
+    </style>
+</head>
+<body>
+    <div class="one"></div>
+    <script>
+       var oDiv=document.querySelector('.one');
+        oDiv.onclick=function(ev){
+            var evt=ev||event;
+            console.log(evt.clientX+":"+evt.clientY);  
+           //console.log(evt.screenX+":"+evt.screenY);  
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="*">
+    <title>Document</title>
+    <style>
+        body{
+            border: 2px solid #000000;
+        }
+        .one{
+            border: 1px solid red;
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script>
+       //这一对属性是用来读取元素的border的宽度和高度的
+        window.onload=function(){
+            var oDiv=document.getElementsByClassName('one')[0];
+            //1:1
+           console.log(oDiv.clientLeft+":"+oDiv.clientTop);
+        }
+    </script>
+</head>
+<body>
+      
+    <div class="one">
+
+    </div>
