@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="*">
+    <title>Document</title>
+    <style>
+        .one{
+            width: 200px;
+            height: 200px;
+            background: red;
+            border: 1px solid #000000;
+            overflow: auto;
+        }
+    </style>
+    <script>
+        // 这一对属性指的是元素的border+padding+content的宽度和高度，
+        // 该属性和其内部的内容是否超出元素大小无关，只和本来设定的border以及width和height有关
+        window.onload=function(){
+            var oDiv=document.getElementsByTagName('div')[0];
+            // 202:202
+            //可以看到该属性和clientWidth以及clientHeight相比，多了设定的边框border的宽度和高度
+            console.log(oDiv.offsetWidth+":"+oDiv.offsetHeight);
+        }
+    </script>
+</head>
+<body>
+    <div class="one">
+        javascript高级应用<br>
+        javascript高级应用<br>
+        javascript高级应用<br>
+        javascript高级应用<br>
+        javascript高级应用<br>
+        javascript高级应用<br>
+        javascript高级应用<br>
+        javascript高级应用<br>
+        javascript高级应用<br>
+        javascript高级应用<br>
+        javascript高级应用<br>
+        javascript高级应用<br>
+        javascript高级应用<br>
+        javascript高级应用<br>
+        javascript高级应用<br>
+        javascript高级应用<br>
+        javascript高级应用<br>
+        javascript高级应用<br>
+    </div>
+</body>
+</html>
