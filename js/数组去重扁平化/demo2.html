@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // indexOf去重（判断indexOf的值是否与元素索引值相等,把相等的放到一个数组里边）
+        var list = [4, 4, "lalala", "lalala", true, true, undefined, 'true', 'true', undefined, undefined, null, null, 0, 0, {}, {}, [], [], NaN, NaN]
+        function uni (arrList) {
+                let reasonList = []
+                for(var i = 0; i < arrList.length; i++) {
+                    if (arrList.indexOf(arrList[i]) === i ){
+                        reasonList.push(arrList[i])
+                    }
+                }
+                return reasonList
+        }
+        console.log(uni(list))
+        //[4, "lalala", true, undefined, "true", null, 0, {}, {}, [], []]
+        //0.025146484375ms
+    </script>
+</body>
+</html>

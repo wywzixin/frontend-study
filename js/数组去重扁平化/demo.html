@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var list = [4, 4, "lalala", "lalala", true, true, undefined, 'true', 'true', undefined, undefined, null, null, 0, 0, {}, {}, [], [], NaN, NaN]
+        function unique(arr) {
+            return Array.from(new Set(arr))
+        }
+        console.log(unique(list))
+
+    // [4, "lalala", true, undefined, "true", null, 0, {}, {}, [], [], NaN]
+    // 0.0029296875ms
+   //[...new Set(list)]
+
+    </script>
+</body>
+</html>

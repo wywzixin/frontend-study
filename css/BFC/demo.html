@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 规则二 -->
+    <!-- 块级元素垂直方向的距离由margin决定。属于同一个BFC的两个相邻块级元素的margin会发生重叠 -->
+    <!-- 按样式代码来看，红块和蓝块之间间距应该是40px。但实际上是20px。这就是BFC渲染规则的第二点 -->
+    <!-- 因为BFC的触发条件之一就是根元素，所以body就是一个BFC容器，红块和蓝块是同在body下的相邻块级元素，
+    其margin会生重叠，所以红块和蓝块之间间距只有20px。 -->
+    <div style="width:100px;height:100px;background:red;margin:20px;"></div>
+    <div style="width:100px;height:100px;background:blue;margin:20px;"></div>
+</body>
+</html>

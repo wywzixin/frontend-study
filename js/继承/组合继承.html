@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title Page</title>
+</head>
+
+<body>
+    <script>
+        //组合继承 通过调用父类构造，继承父类的属性并保留传参的优点，然后通过将父类实例作为子类原型，实现函数复用
+        
+        // 缺点: 调用了两次父类构造函数，生成了两份实例
+
+        function Person(name, age) {
+            this.name = name,
+            this.age = age,
+            this.setAge = function () { }
+        }
+        Person.prototype.setAge = function () {
+            console.log("111")
+        }
+        function Student(name, age, price) {
+            Person.call(this,name,age)
+            this.price = price
+            this.setScore = function () { }
+        }
+        Student.prototype = new Person()
+        Student.prototype.constructor = Student//组合继承也是需要修复构造函数指向的
+        Student.prototype.sayHello = function () { }
+        var s1 = new Student('Tom', 20, 15000)
+        var s2 = new Student('Jack', 22, 14000)
+        console.log(s1)
+        console.log(s1.constructor) //Student
+        console.log(p1.constructor) //Person
+
+    </script>
+</body>
+
+</html>

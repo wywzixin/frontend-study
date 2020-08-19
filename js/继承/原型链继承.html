@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title Page</title>
+</head>
+
+<body>
+    <script>
+        // 原型链继承 核心是:让子类构造函数的原型指向父类实例
+        // 缺点: 1.来自原型对象的所有属性被所有实例共享
+        //       2.创建子类实例时，无法向父类构造函数传参
+        //       3.无法实现多继承
+
+           function One() {
+                this.numOne = 1;
+            }
+            One.prototype.getNumOne = function() {
+                return this.numOne;
+            }
+
+            function Two() {
+                this.numTwo = 2;
+            }
+            // Two继承了One
+            // Two的原型对象prototype是One的实例，其内部指针__proto__指向One的原型对象
+            Two.prototype = new One();
+
+            Two.prototype.getNumTwo = function() {
+                return this.numTwo;
+            }
+
+            const two = new Two();
+            two.getNumOne(); // 1
+
+    </script>
+</body>
+
+</html>

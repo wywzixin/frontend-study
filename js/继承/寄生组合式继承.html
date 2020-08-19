@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title Page</title>
+</head>
+
+<body>
+    <script>
+        // inheritPrototype接收两个参数：子类型的构造函数和父类型的构造函数
+        // 借助原型可以基于已有的对象来创建对象，var B = Object.create(A)以A对象为原型，生成了B对象。B继承了A的所有属性和方法
+            function inheritPrototype(child, parent) {
+                // 创建父类型原型的副本
+                const prototype = Object.create(parent.prototype); 
+                // 为创建的副本添加constructor属性，从而弥补因重写原型而失去的默认的constructor属性
+                prototype.constructor = child;
+                // 将创建的副本赋值给子类型的原型
+                child.prototype = prototype;
+            }
+
+            function One(num1) {
+                this.numOne = num1;
+                this.numList = [1,2];
+            }
+            One.prototype.getNumOne = function() {
+                return this.numOne;
+            }
+
+            function Two(num1, num2) {
+                One.call(this, num1)
+                this.numTwo = num2;
+            }
+            inheritPrototype(Two, One);
+            Two.prototype.getNumTwo = function() {
+                return this.numTwo;
+            }
+
+            var two = new Two(3, 5);
+            two.numList.push(6); 
+            console.log(two.numList); // [1, 2, 6]
+            two.getNumOne(); // 3
+            two.getNumTwo(); // 5
+
+
+    </script>
+</body>
+
+</html>

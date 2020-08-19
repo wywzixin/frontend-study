@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title Page</title>
+</head>
+
+<body>
+    <script>
+        class One{
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+                this.hobby = "Coding"
+            }
+            getOneInfo() {
+                return `姓名：${this.name}，年龄：${this.age}`;
+            }
+        }
+        // Two这个类通过extends关键字，继承了One这个类的所有属性和方法。
+        class Two extends One {
+            constructor(x, y, gender) {
+                // 调用父类的constructor
+                super(x, y);
+                this.gender = gender;
+            }
+            getTwoInfo() {
+                // 调用父类原型上的方法 getOneInfo()，父类的属性会被子类继承
+                return `${super.getOneInfo()}，性别：${this.gender}，爱好：${this.hobby}`;
+            }
+        }
+
+        const two = new Two("MMZ", "18", "girl");
+        two.getTwoInfo(); 
+
+
+    </script>
+</body>
+
+</html>
