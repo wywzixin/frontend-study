@@ -10,7 +10,7 @@
 
 <body>
     <script>
-        // inheritPrototype接收两个参数：子类型的构造函数和父类型的构造函数
+        // 寄生组合式继承,inheritPrototype接收两个参数：子类型的构造函数和父类型的构造函数
         // 借助原型可以基于已有的对象来创建对象，var B = Object.create(A)以A对象为原型，生成了B对象。B继承了A的所有属性和方法
             function inheritPrototype(child, parent) {
                 // 创建父类型原型的副本

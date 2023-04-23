@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <input type="text" id="input" />
+        <span id="span"></span>
+        <script>
+            const data = { text: '' };
+            const input = document.getElementById('input');
+            const span = document.getElementById('span');
+
+            const proxy = new Proxy(data, {
+                get(target, key) {
+                    console.log('获取数据', target, key);
+                },
+                set(target, key, value) {
+                    console.log('target', target);
+                    target[key] = value;
+                    input.value = value;
+                    span.innerHTML = value;
+                    return value;
+                },
+            });
+
+            input.addEventListener('keyup', function (e) {
+                proxy.text = e.target.value;
+            });
+        </script>
+    </body>
+</html>

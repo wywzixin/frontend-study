@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            const data = [
+                {
+                    name: 'a',
+                    children: [
+                        { name: 'b', children: [{ name: 'e' }] },
+                        { name: 'c', children: [{ name: 'f' }] },
+                        { name: 'd', children: [{ name: 'g' }] },
+                    ],
+                },
+                {
+                    name: 'a2',
+                    children: [
+                        { name: 'b2', children: [{ name: 'e2' }] },
+                        { name: 'c2', children: [{ name: 'f2' }] },
+                        { name: 'd2', children: [{ name: 'g2' }] },
+                    ],
+                },
+            ];
+            function BFS(source) {
+                const result = [];
+                const queue = JSON.parse(JSON.stringify(source));
+                while (queue.length) {
+                    const node = queue.shift();
+                    result.push(node.name);
+                    if (node.children) {
+                        for (let i = 0; i < node.children.length; i++) {
+                            queue.push(node.children[i]);
+                        }
+                    }
+                }
+                return result;
+            }
+            console.log(BFS(data));
+            console.log(data);
+        </script>
+    </body>
+</html>

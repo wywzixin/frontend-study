@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            let str = 'get-element-by-id';
+            function changeToCamp(str) {
+                const reg = /-\w/g;
+                return str.replace(reg, value => value[1].toUpperCase());
+            }
+            const res = changeToCamp(str);
+            console.log(res);
+        </script>
+    </body>
+</html>

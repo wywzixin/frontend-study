@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
-        //reduce解决js数组扁平化问题
-      var arr = [1, 2, [3, 4, 5, [6, 7], 8], 9, 10, [11, [12, 13]]]
-      function flatten(arr){
-          return arr.reduce(function(prev,item){
-              return prev.concat(Array.isArray(item)?flatten(item):item)
-          },[])
-      }
-     var result= flatten(arr)
-     console.log(result)
-     //[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-    </script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            //reduce解决js数组扁平化问题
+            var arr = [1, 2, [3, 4, 5, [6, 7], 8], 9, 10, [11, [12, 13]]];
+            function flatten(arr) {
+                return arr.reduce(function (prev, item) {
+                    return prev.concat(Array.isArray(item) ? flatten(item) : item);
+                }, []);
+            }
+            var result = flatten(arr);
+            console.log(result);
+            //[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+        </script>
+    </body>
 </html>

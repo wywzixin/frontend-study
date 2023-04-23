@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script src="./demo.js"></script>
+        <script>
+            const str = 'wfeuh@ufjdkncpskskunfljsefhfeslshlnnb,xmnznzhzissksk';
+            const strArr = str.split('');
+            const obj = strArr.reduce((res, cur) => {
+                res[cur] ? res[cur]++ : (res[cur] = 1);
+                return res;
+            }, {});
+            let maxCount = 0;
+            let maxKey = '';
+            for (const key in obj) {
+                if (maxCount < obj[key]) {
+                    maxKey = key;
+                    maxCount = obj[key];
+                }
+            }
+            console.log(maxKey, maxCount);
+        </script>
+    </body>
+</html>

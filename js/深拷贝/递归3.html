@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // 下面是验证代码
+            // let obj = {
+            //     num: 0,
+            //     str: '',
+            //     boolean: true,
+            //     unf: undefined,
+            //     nul: null,
+            //     obj: { name: '我是一个对象', id: 1 },
+            //     arr: [0, 1, 2],
+            //     func: function () {
+            //         console.log('我是一个函数');
+            //     },
+            //     date: new Date(0),
+            //     reg: new RegExp('/我是一个正则/ig'),
+            //     [Symbol('1')]: 1,
+            // };
+            // let obj = [1, 2, 3, 4];
+            // console.log('ownKeys', Reflect.ownKeys(obj));
+
+            let obj = [1, 2, 3];
+            let allDesc = Object.getOwnPropertyDescriptors(obj);
+            // 遍历传入参数所有键的特性
+            let cloneObj = Object.create(Object.getPrototypeOf(obj), allDesc);
+            console.log(cloneObj);
+            console.log('allDes', Object.getPrototypeOf(obj));
+        </script>
+        s
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            const shadowClone = target => {
+                if (typeof target === 'object' && target !== null) {
+                    const cloneTarget = Array.isArray(target) ? [] : {};
+                    for (let prop in target) {
+                        if (target.hasOwnProperty(prop)) {
+                            cloneTarget[prop] = target[prop];
+                        }
+                    }
+                    return cloneTarget;
+                } else {
+                    return target;
+                }
+            };
+            let obj = { a: 1, b: { c: 1 } };
+            console.log(shadowClone(obj));
+        </script>
+    </body>
+</html>
